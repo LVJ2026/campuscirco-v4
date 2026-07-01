@@ -393,4 +393,24 @@ footer{
     }
 
 }
+.badge{
+
+    display:inline-block;
+
+    margin:10px 0 18px;
+
+    padding:6px 14px;
+
+    background:#EAF2FB;
+
+    color:#1E4F91;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
 

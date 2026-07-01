@@ -91,20 +91,20 @@ function afficherSeances(ecole) {
 div.innerHTML = `
     <h3>${animation ? animation.fields.Titre : seance.fields.ID_seance}</h3>
 
-    <div class="domaine">
-        ${seance.fields.Domaine ?? "-"}
-    </div>
+   <div class="badge">
+    ${animation.fields.Domaine ?? ""}
+   </div>
 
     <div class="ligne">
 
         <div class="case">
             <span>📅 Date</span>
-            <strong>${seance.fields.Date || "-"}</strong>
+            <strong>${seance.fields.Date || "À définir"}</strong>
         </div>
 
         <div class="case">
             <span>🕒 Horaire</span>
-            <strong>${seance.fields.Horaire || "-"}</strong>
+            <strong>${seance.fields.Horaire || "À définir"}</strong>
         </div>
 
         <div class="case">
