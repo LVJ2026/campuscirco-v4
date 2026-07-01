@@ -1,23 +1,345 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+/* ==========================================================
+   CAMPUS CIRCO
+   Version 1.1
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1 {
-    margin-bottom: 30px;
+:root{
+
+    --bleu:#1E4F91;
+    --bleu-clair:#EAF2FB;
+    --gris:#F4F6F9;
+    --gris-bordure:#DDE3EA;
+    --texte:#243447;
+    --blanc:#FFFFFF;
+
+    --ombre:0 8px 25px rgba(0,0,0,.08);
+
+    --rayon:16px;
+
 }
 
-select {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--gris);
+
+    color:var(--texte);
+
+    line-height:1.5;
+
 }
 
-#seances div {
-    margin: 6px 0;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+.container{
+
+    width:min(1100px,95%);
+
+    margin:auto;
+
+    padding:40px 0 60px;
+
 }
+
+.header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-bottom:40px;
+
+    background:white;
+
+    border-radius:var(--rayon);
+
+    padding:25px 35px;
+
+    box-shadow:var(--ombre);
+
+}
+
+.logo{
+
+    width:120px;
+
+    height:auto;
+
+    flex-shrink:0;
+
+}
+
+.header h1{
+
+    color:var(--bleu);
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+}
+
+.subtitle{
+
+    margin-top:6px;
+
+    color:#666;
+
+    font-size:1rem;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:var(--rayon);
+
+    box-shadow:var(--ombre);
+
+    padding:28px;
+
+    margin-bottom:25px;
+
+}
+
+.card h2{
+
+    color:var(--bleu);
+
+    font-size:1.25rem;
+
+    margin-bottom:22px;
+
+}
+
+label{
+
+    display:block;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid var(--gris-bordure);
+
+    border-radius:12px;
+
+    background:white;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+select:hover{
+
+    border-color:var(--bleu);
+
+}
+
+select:focus{
+
+    border-color:var(--bleu);
+
+    box-shadow:0 0 0 3px rgba(30,79,145,.15);
+
+}
+
+.infos{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.infos div{
+
+    background:var(--bleu-clair);
+
+    border-radius:12px;
+
+    padding:18px;
+
+}
+
+.infos span{
+
+    display:block;
+
+    font-size:.85rem;
+
+    color:#666;
+
+    margin-bottom:8px;
+
+}
+
+.infos strong{
+
+    font-size:1.05rem;
+
+    color:var(--bleu);
+
+}
+/* ==========================
+   CARTES DES SÉANCES
+========================== */
+
+#seances{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.seance{
+
+    background:white;
+
+    border-left:6px solid var(--bleu);
+
+    border-radius:14px;
+
+    padding:22px;
+
+    box-shadow:var(--ombre);
+
+}
+
+.seance h3{
+
+    color:var(--bleu);
+
+    font-size:1.15rem;
+
+    margin-bottom:15px;
+
+}
+
+.seance p{
+
+    margin:8px 0;
+
+    font-size:.97rem;
+
+}
+
+.seance strong{
+
+    color:#444;
+
+}
+
+/* ==========================
+   PETITES ICÔNES
+========================== */
+
+.icone{
+
+    display:inline-block;
+
+    width:26px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:900px){
+
+    .header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .logo{
+
+        width:90px;
+
+    }
+
+    .header h1{
+
+        font-size:1.8rem;
+
+    }
+
+    .container{
+
+        width:94%;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    .card{
+
+        padding:18px;
+
+    }
+
+    .infos{
+
+        grid-template-columns:1fr;
+
+    }
+
+    select{
+
+        font-size:15px;
+
+    }
+
+}
+
