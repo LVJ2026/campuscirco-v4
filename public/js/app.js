@@ -32,9 +32,12 @@ animations = donneesAnimations.records;
             const option = document.createElement("option");
 
             option.value = ecole.id;
-            option.textContent =
-                `${ecole.fields.Ecole} (${ecole.fields.Ville})`;
+const niveau = ecole.fields.UAI.toLowerCase().includes("maternelle")
+    ? "Maternelle"
+    : "Élémentaire";
 
+option.textContent =
+    `${ecole.fields.Ecole} – ${niveau} (${ecole.fields.Ville})`;
             liste.appendChild(option);
 
         });
