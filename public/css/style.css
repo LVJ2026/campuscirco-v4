@@ -447,5 +447,55 @@ footer{
 
 }
 
+/* ==========================
+   IMPRESSION PDF
+========================== */
+
+@media print {
+
+    body{
+
+        background:white;
+
+    }
+
+    .btn-pdf{
+
+        display:none;
+
+    }
+
+    select{
+
+        border:none;
+
+        appearance:none;
+
+        font-weight:600;
+
+        padding:0;
+
+    }
+
+    .card{
+
+        box-shadow:none;
+
+        border:1px solid #DDD;
+
+        page-break-inside:avoid;
+
+    }
+
+    .seance{
+
+        page-break-inside:avoid;
+
+        box-shadow:none;
+
+    }
+
+}
+
 
 

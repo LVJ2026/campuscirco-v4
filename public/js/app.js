@@ -129,3 +129,14 @@ div.innerHTML = `
 }
 console.log("APP V2");
 document.addEventListener("DOMContentLoaded", chargerEcoles);
+
+document.addEventListener("click", (event) => {
+
+    if (event.target.id === "btnPDF") {
+
+        window.print();
+
+    }
+
+});
+
