@@ -235,11 +235,13 @@ select:focus{
 
     border-left:6px solid var(--bleu);
 
-    border-radius:14px;
+    border-radius:16px;
 
-    padding:22px;
+    padding:22px 26px;
 
-    box-shadow:var(--ombre);
+    margin-bottom:20px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
 
 }
 
@@ -247,26 +249,61 @@ select:focus{
 
     color:var(--bleu);
 
-    font-size:1.15rem;
+    font-size:1.4rem;
 
-    margin-bottom:15px;
-
-}
-
-.seance p{
-
-    margin:8px 0;
-
-    font-size:.97rem;
+    margin-bottom:8px;
 
 }
 
-.seance strong{
+.seance .domaine{
 
-    color:#444;
+    color:#555;
+
+    font-size:1.05rem;
+
+    margin-bottom:18px;
 
 }
 
+.ligne{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    border-top:1px solid #E8EDF3;
+
+    padding-top:18px;
+
+}
+
+.case{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.case span{
+
+    color:#7A8699;
+
+    font-size:.85rem;
+
+    margin-bottom:6px;
+
+}
+
+.case strong{
+
+    color:#233B6E;
+
+    font-size:1.05rem;
+
+}
 /* ==========================
    PETITES ICÔNES
 ========================== */
