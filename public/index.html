@@ -1,36 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Campus Circo</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <h1>Campus Circo</h1>
+<div class="container">
 
-    <label for="ecole">École</label><br>
+    <header class="header">
 
-    <select id="ecole"></select>
+        <img src="images/logo-campuscirco.png"
+             alt="Campus Circo"
+             class="logo">
 
-    <hr>
+        <div>
 
-    <h2>Informations</h2>
+            <h1>Campus Circo</h1>
 
-    <p><strong>UAI :</strong> <span id="uai">-</span></p>
-    <p><strong>Ville :</strong> <span id="ville">-</span></p>
-    <p><strong>Type :</strong> <span id="type">-</span></p>
-    <p><strong>Type de formation :</strong> <span id="formation">-</span></p>
-    <p><strong>Nombre d'enseignants :</strong> <span id="nb">-</span></p>
+            <p class="subtitle">
+                Plan de formation continue Vandoeuvre
+            </p>
 
-    <h2>Séances</h2>
+        </div>
 
-    <div id="seances">Chargement...</div>
+    </header>
 
-    <script src="js/app.js"></script>
+    <section class="card">
+
+        <label for="ecole">
+            🏫 École
+        </label>
+
+        <select id="ecole"></select>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Informations de l'école</h2>
+
+        <div class="infos">
+
+            <div>
+                <span>UAI</span>
+                <strong id="uai"></strong>
+            </div>
+
+            <div>
+                <span>Ville</span>
+                <strong id="ville"></strong>
+            </div>
+
+            <div>
+                <span>Type</span>
+                <strong id="type"></strong>
+            </div>
+
+            <div>
+                <span>Type de formation</span>
+                <strong id="formation"></strong>
+            </div>
+
+            <div>
+                <span>Nombre d'enseignants</span>
+                <strong id="nb"></strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="card">
+
+        <h2>📚 Séances</h2>
+
+        <div id="seances">
+
+            Chargement...
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="js/app.js"></script>
 
 </body>
 </html>
