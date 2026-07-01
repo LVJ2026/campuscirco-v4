@@ -1,20 +1,24 @@
 let ecoles = [];
 let seances = [];
+let animations = [];
 
 async function chargerEcoles() {
 
     const liste = document.getElementById("ecole");
 
-    const [repEcoles, repSeances] = await Promise.all([
-        fetch("/api/ecoles"),
-        fetch("/api/seances")
-    ]);
+    const [repEcoles, repSeances, repAnimations] = await Promise.all([
+    fetch("/api/ecoles"),
+    fetch("/api/seances"),
+    fetch("/api/animations")
+]);
 
-    const donneesEcoles = await repEcoles.json();
-    const donneesSeances = await repSeances.json();
+const donneesEcoles = await repEcoles.json();
+const donneesSeances = await repSeances.json();
+const donneesAnimations = await repAnimations.json();
 
-    ecoles = donneesEcoles.records;
-    seances = donneesSeances.records;
+ecoles = donneesEcoles.records;
+seances = donneesSeances.records;
+animations = donneesAnimations.records;
 
     liste.innerHTML = "";
 
@@ -80,10 +84,12 @@ function afficherSeances(ecole) {
 
         const div = document.createElement("div");
 
+        const animation = animations.find(a => a.id === seance.fields.Animation);
+
         div.className = "seance";
 
 div.innerHTML = `
-    <h3>${seance.fields.Animation}</h3>
+    <h3>${animation ? animation.fields.Titre : seance.fields.ID_seance}</h3>
 
     <div class="domaine">
         ${seance.fields.Domaine ?? "-"}
