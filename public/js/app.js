@@ -76,8 +76,8 @@ function afficherSeances(ecole) {
 
     zone.innerHTML = "";
 
-    const lignesEcole = inscriptions.filter(inscription =>
-    inscription.fields.UAI === ecole.fields.UAI
+const lignesEcole = inscriptions.filter(inscription =>
+    inscription.fields.UAI === ecole.id
 );
 
 const idsSeances = lignesEcole.map(inscription =>
