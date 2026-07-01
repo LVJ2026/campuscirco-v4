@@ -417,4 +417,35 @@ footer{
 
 }
 
+.btn-pdf{
+
+    margin-left:auto;
+
+    background:#1E4F91;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 20px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.btn-pdf:hover{
+
+    background:#163d72;
+
+}
+
+
 
