@@ -1,24 +1,28 @@
 let ecoles = [];
 let seances = [];
 let animations = [];
+let inscriptions = [];
 
 async function chargerEcoles() {
 
     const liste = document.getElementById("ecole");
 
-    const [repEcoles, repSeances, repAnimations] = await Promise.all([
+   const [repEcoles, repSeances, repAnimations, repInscriptions] = await Promise.all([
     fetch("/api/ecoles"),
     fetch("/api/seances"),
-    fetch("/api/animations")
+    fetch("/api/animations"),
+    fetch("/api/inscriptions")
 ]);
 
 const donneesEcoles = await repEcoles.json();
 const donneesSeances = await repSeances.json();
 const donneesAnimations = await repAnimations.json();
+const donneesInscriptions = await repInscriptions.json();
 
 ecoles = donneesEcoles.records;
 seances = donneesSeances.records;
 animations = donneesAnimations.records;
+inscriptions = donneesInscriptions.records;
 
     liste.innerHTML = "";
 
@@ -72,11 +76,17 @@ function afficherSeances(ecole) {
 
     zone.innerHTML = "";
 
-    const inscriptions = ecole.fields.INSCRIPTIONS || [];
+    const lignesEcole = inscriptions.filter(inscription =>
+    inscription.fields.UAI === ecole.fields.UAI
+);
 
-    const liste = seances.filter(seance =>
-        inscriptions.includes(seance.id)
-    );
+const idsSeances = lignesEcole.map(inscription =>
+    inscription.fields.SEANCE
+);
+
+const liste = seances.filter(seance =>
+    idsSeances.includes(seance.fields.ID_seance)
+);
 
     if (liste.length === 0) {
         zone.textContent = "Aucune séance";
