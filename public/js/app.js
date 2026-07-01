@@ -92,7 +92,10 @@ div.innerHTML = `
     <h3>${animation ? animation.fields.Titre : seance.fields.ID_seance}</h3>
 
    <div class="badge">
-    ${animation.fields.Domaine ?? ""}
+    ${animation.fields.Domaine
+    ? animation.fields.Domaine.charAt(0).toUpperCase() + animation.fields.Domaine.slice(1)
+    : ""}
+
    </div>
 
     <div class="ligne">
