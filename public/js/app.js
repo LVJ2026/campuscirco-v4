@@ -1,13 +1,20 @@
 let ecoles = [];
+let seances = [];
 
 async function chargerEcoles() {
 
     const liste = document.getElementById("ecole");
 
-    const reponse = await fetch("/api/ecoles");
-    const donnees = await reponse.json();
+    const [repEcoles, repSeances] = await Promise.all([
+        fetch("/api/ecoles"),
+        fetch("/api/seances")
+    ]);
 
-    ecoles = donnees.records;
+    const donneesEcoles = await repEcoles.json();
+    const donneesSeances = await repSeances.json();
+
+    ecoles = donneesEcoles.records;
+    seances = donneesSeances.records;
 
     liste.innerHTML = "";
 
@@ -47,6 +54,41 @@ function afficherEcole() {
     document.getElementById("type").textContent = ecole.fields.Type ?? "";
     document.getElementById("formation").textContent = ecole.fields.Type_de_formation ?? "";
     document.getElementById("nb").textContent = ecole.fields.Nb_enseignants ?? "";
+
+    afficherSeances(ecole);
+
+}
+
+function afficherSeances(ecole) {
+
+    const zone = document.getElementById("seances");
+
+    zone.innerHTML = "";
+
+    const inscriptions = ecole.fields.INSCRIPTIONS || [];
+
+    const liste = seances.filter(seance =>
+        inscriptions.includes(seance.id)
+    );
+
+    if (liste.length === 0) {
+        zone.textContent = "Aucune séance";
+        return;
+    }
+
+    liste.forEach(seance => {
+
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+            <strong>${seance.fields.ID_seance}</strong><br>
+            ${seance.fields.Domaine}<br>
+            ${seance.fields.Duree}
+        `;
+
+        zone.appendChild(div);
+
+    });
 
 }
 
