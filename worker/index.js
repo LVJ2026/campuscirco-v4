@@ -44,6 +44,24 @@ export default {
       });
 
     }
+if (url.pathname === "/api/animations") {
+  const reponse = await fetch(
+    `https://grist.numerique.gouv.fr/api/docs/${env.GRIST_DOCUMENT_ID}/tables/ANIMATIONS/records`,
+    {
+      headers: {
+        Authorization: `Bearer ${env.GRIST_API_KEY}`
+      }
+    }
+  );
+
+  return new Response(await reponse.text(), {
+    status: reponse.status,
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
+    }
+  });
+}
 
     return env.ASSETS.fetch(request);
 
