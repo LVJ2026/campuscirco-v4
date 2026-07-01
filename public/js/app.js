@@ -83,7 +83,7 @@ function afficherSeances(ecole) {
         div.className = "seance";
 
 div.innerHTML = `
-    <h3>${seance.fields.ID_seance}</h3>
+    <h3>${seance.fields.Animation}</h3>
 
     <div class="domaine">
         ${seance.fields.Domaine ?? "-"}
