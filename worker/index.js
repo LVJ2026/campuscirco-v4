@@ -27,7 +27,7 @@ export default {
     if (url.pathname === "/api/seances") {
 
       const reponse = await fetch(
-        `https://grist.numerique.gouv.fr/api/docs/${env.GRIST_DOCUMENT_ID}/tables/SEANCES/records`,
+        `https://grist.numerique.gouv.fr/api/docs/${env.GRIST_DOCUMENT_ID}/tables/SEANCES/records?expand=true`,
         {
           headers: {
             Authorization: `Bearer ${env.GRIST_API_KEY}`
