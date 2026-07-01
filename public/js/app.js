@@ -118,5 +118,5 @@ div.innerHTML = `
     });
 
 }
-
+console.log("APP V2");
 document.addEventListener("DOMContentLoaded", chargerEcoles);
