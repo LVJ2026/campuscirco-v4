@@ -80,11 +80,21 @@ function afficherSeances(ecole) {
 
         const div = document.createElement("div");
 
-        div.innerHTML = `
-            <strong>${seance.fields.ID_seance}</strong><br>
-            ${seance.fields.Domaine}<br>
-            ${seance.fields.Duree}
-        `;
+        div.className = "seance";
+
+div.innerHTML = `
+    <h3>${seance.fields.ID_seance}</h3>
+
+    <p><strong>Domaine :</strong> ${seance.fields.Domaine ?? "-"}</p>
+
+    <p>📅 <strong>Date :</strong> ${seance.fields.Date || "-"}</p>
+
+    <p>🕒 <strong>Horaire :</strong> ${seance.fields.Horaire || "-"}</p>
+
+    <p>📍 <strong>Lieu :</strong> ${seance.fields.Lieu || "-"}</p>
+
+    <p>⏱ <strong>Durée :</strong> ${seance.fields.Duree || "-"}</p>
+`;
 
         zone.appendChild(div);
 

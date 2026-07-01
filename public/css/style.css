@@ -342,4 +342,34 @@ footer{
     }
 
 }
+.seance{
+
+    background:white;
+
+    border-left:5px solid #1E4F91;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.seance h3{
+
+    color:#1E4F91;
+
+    margin-bottom:12px;
+
+}
+
+.seance p{
+
+    margin:8px 0;
+
+}
+
 
