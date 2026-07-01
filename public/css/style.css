@@ -453,6 +453,10 @@ footer{
 
 @media print {
 
+       #infos-ecole{
+         display:none;
+    }
+
     body{
 
         background:white;
