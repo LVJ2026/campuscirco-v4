@@ -477,19 +477,17 @@ footer{
 
     }
 
-    .card{
+     .card{
 
-        box-shadow:none;
+       box-shadow:none;
 
-        border:1px solid #DDD;
+       border:1px solid #DDD;
 
-        page-break-inside:avoid;
+   }
 
-    }
+     .seance{
 
-    .seance{
-
-        page-break-inside:avoid;
+        break-inside: avoid;
 
         box-shadow:none;
 
