@@ -76,8 +76,6 @@ function afficherSeances(ecole) {
 
     zone.innerHTML = "";
 
-console.log("Ecole sélectionnée :", ecole.id, ecole.fields.Ecole);
-console.log(inscriptions);
     
 console.log("École :", ecole);
 
@@ -86,7 +84,7 @@ inscriptions.forEach(i => {
 });
 
 const liste = inscriptions.filter(inscription =>
-    true
+    inscription.fields.UAI === ecole.id
 );
 
     if (liste.length === 0) {
@@ -149,6 +147,17 @@ const liste = inscriptions.filter(inscription =>
         zone.appendChild(div);
 
     });
+
+${
+    inscription.fields.Observations
+    ? `
+    <div class="observation">
+        <strong>Observation :</strong><br>
+        ${inscription.fields.Observations}
+    </div>
+    `
+    : ""
+}
 
 }
 console.log("APP V2");
