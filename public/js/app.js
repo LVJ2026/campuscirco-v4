@@ -83,9 +83,13 @@ inscriptions.forEach(i => {
     console.log(i.fields.UAI, i.fields);
 });
 
-const liste = inscriptions.filter(inscription =>
-    inscription.fields.UAI === ecole.id
-);
+const liste = inscriptions.filter(inscription => {
+
+    console.log("Comparaison :", inscription.fields.UAI, ecole.id);
+
+    return inscription.fields.UAI === ecole.id;
+
+});
 
     if (liste.length === 0) {
         zone.textContent = "Aucune séance";
