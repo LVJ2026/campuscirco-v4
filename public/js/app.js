@@ -79,24 +79,10 @@ function afficherSeances(ecole) {
     zone.innerHTML = "";
 
     
-const liste = inscriptions
-    .filter(inscription => inscription.fields.UAI === ecole.id)
-    .sort((a, b) => {
+const liste = inscriptions.filter(inscription =>
+    inscription.fields.UAI === ecole.id
+);
 
-        const da = a.fields.Ordre
-            ? a.fields.Ordre[1]
-            : Number.MAX_SAFE_INTEGER;
-
-        const db = b.fields.Ordre
-            ? b.fields.Ordre[1]
-            : Number.MAX_SAFE_INTEGER;
-
-        return da - db;
-
-    });
-
-
-   
 
 
     if (liste.length === 0) {
