@@ -91,11 +91,9 @@ function formaterDate(valeur) {
 
     if (!valeur) return "À définir";
 
-    if (typeof valeur === "string" && valeur.startsWith("d,")) {
+    if (Array.isArray(valeur) && valeur[0] === "d") {
 
-        const timestamp = Number(valeur.substring(2));
-
-        return new Date(timestamp * 1000).toLocaleDateString("fr-FR");
+        return new Date(valeur[1] * 1000).toLocaleDateString("fr-FR");
 
     }
 
