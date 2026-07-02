@@ -152,7 +152,6 @@ const liste = inscriptions.filter(inscription => {
 
     });
 
-
 }
 console.log("APP V2");
 document.addEventListener("DOMContentLoaded", chargerEcoles);
@@ -166,4 +165,3 @@ document.addEventListener("click", (event) => {
     }
 
 });
-
