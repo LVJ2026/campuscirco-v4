@@ -118,7 +118,12 @@ const liste = inscriptions
 
                 <div class="case">
                     <span>📅 Date</span>
-                    <strong>${inscription.fields.Date || "À définir"}</strong>
+                   
+ <strong>${
+    inscription.fields.Date
+        ? new Date(inscription.fields.Date).toLocaleDateString("fr-FR")
+        : "À définir"
+}</strong>
                 </div>
 
                 <div class="case">
