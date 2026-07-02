@@ -89,9 +89,9 @@ function formaterDate(valeur) {
 
 function formaterDate(valeur) {
 
-    console.log(valeur);
+    console.log("Date =", valeur);
 
-    return JSON.stringify(valeur);
+    return "TEST";
 
 }
 
