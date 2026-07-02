@@ -96,20 +96,7 @@ const liste = inscriptions
     });
 
 
-    .filter(inscription => inscription.fields.UAI === ecole.id)
-    .sort((a, b) => {
-
-        const da = a.fields.Date
-            ? new Date(a.fields.Date)
-            : new Date("2100-01-01");
-
-        const db = b.fields.Date
-            ? new Date(b.fields.Date)
-            : new Date("2100-01-01");
-
-        return da - db;
-
-    });
+   
 
 
     if (liste.length === 0) {
