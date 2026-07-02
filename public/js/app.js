@@ -79,9 +79,15 @@ function afficherSeances(ecole) {
 console.log("Ecole sélectionnée :", ecole.id, ecole.fields.Ecole);
 console.log(inscriptions);
     
+console.log("École :", ecole);
+
+inscriptions.forEach(i => {
+    console.log(i.fields.UAI, i.fields);
+});
+
 const liste = inscriptions.filter(inscription =>
-        inscription.fields.UAI === ecole.id
-    );
+    true
+);
 
     if (liste.length === 0) {
         zone.textContent = "Aucune séance";
