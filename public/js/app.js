@@ -89,15 +89,17 @@ function formaterDate(valeur) {
 
 function formaterDate(valeur) {
 
+    console.log("Date reçue :", valeur, typeof valeur);
+
     if (!valeur) return "À définir";
 
-    if (Array.isArray(valeur) && valeur[0] === "d") {
+    if (Array.isArray(valeur)) {
 
         return new Date(valeur[1] * 1000).toLocaleDateString("fr-FR");
 
     }
 
-    return valeur;
+    return String(valeur);
 
 }
 
