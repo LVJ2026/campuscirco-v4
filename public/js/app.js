@@ -145,7 +145,7 @@ const liste = inscriptions
                 <div class="case">
                     <span>📅 Date</span>
                    
-<strong>${formaterDate(inscription.fields.Date)}</strong>
+<strong>${inscription.fields.Date_Affichage || "À définir"}</strong>
 
                 </div>
 
