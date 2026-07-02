@@ -152,16 +152,6 @@ const liste = inscriptions.filter(inscription => {
 
     });
 
-${
-    inscription.fields.Observations
-    ? `
-    <div class="observation">
-        <strong>Observation :</strong><br>
-        ${inscription.fields.Observations}
-    </div>
-    `
-    : ""
-}
 
 }
 console.log("APP V2");
