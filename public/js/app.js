@@ -70,6 +70,39 @@ function afficherEcole() {
 
 }
 
+function formaterDate(valeur) {
+
+    if (!valeur) return "À définir";
+
+    if (typeof valeur === "string" && valeur.startsWith("d,")) {
+
+        const timestamp = Number(valeur.substring(2));
+
+        return new Date(timestamp * 1000).toLocaleDateString("fr-FR");
+
+    }
+
+    return valeur;
+
+}
+
+
+function formaterDate(valeur) {
+
+    if (!valeur) return "À définir";
+
+    if (typeof valeur === "string" && valeur.startsWith("d,")) {
+
+        const timestamp = Number(valeur.substring(2));
+
+        return new Date(timestamp * 1000).toLocaleDateString("fr-FR");
+
+    }
+
+    return valeur;
+
+}
+
 function afficherSeances(ecole) {
 
     const zone = document.getElementById("seances");
@@ -119,11 +152,8 @@ const liste = inscriptions
                 <div class="case">
                     <span>📅 Date</span>
                    
- <strong>${
-    inscription.fields.Date
-        ? new Date(inscription.fields.Date).toLocaleDateString("fr-FR")
-        : "À définir"
-}</strong>
+<strong>${formaterDate(inscription.fields.Date)}</strong>
+
                 </div>
 
                 <div class="case">
