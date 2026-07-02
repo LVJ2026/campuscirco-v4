@@ -76,65 +76,70 @@ function afficherSeances(ecole) {
 
     zone.innerHTML = "";
 
-const lignesEcole = inscriptions.filter(inscription =>
-    inscription.fields.UAI === ecole.id
-);
-
-const idsSeances = lignesEcole.map(inscription =>
-    inscription.fields.SEANCE
-);
-
-const liste = seances.filter(seance =>
-    idsSeances.includes(seance.fields.ID_seance)
-);
+console.log("Ecole sélectionnée :", ecole.id, ecole.fields.Ecole);
+console.log(inscriptions);
+    
+const liste = inscriptions.filter(inscription =>
+        inscription.fields.UAI === ecole.id
+    );
 
     if (liste.length === 0) {
         zone.textContent = "Aucune séance";
         return;
     }
 
-    liste.forEach(seance => {
+    liste.forEach(inscription => {
 
         const div = document.createElement("div");
 
-        const animation = animations.find(a => a.id === seance.fields.Animation);
-
         div.className = "seance";
 
-div.innerHTML = `
-    <h3>${animation ? animation.fields.Titre : seance.fields.ID_seance}</h3>
+        div.innerHTML = `
 
-   <div class="badge">
-    ${animation.fields.Domaine
-    ? animation.fields.Domaine.charAt(0).toUpperCase() + animation.fields.Domaine.slice(1)
-    : ""}
+            <h3>${inscription.fields.Titre_Animation}</h3>
 
-   </div>
+            <div class="badge">
+                ${(inscription.fields.Domaine || "").charAt(0).toUpperCase() +
+                (inscription.fields.Domaine || "").slice(1)}
+            </div>
 
-    <div class="ligne">
+            <div class="ligne">
 
-        <div class="case">
-            <span>📅 Date</span>
-            <strong>${seance.fields.Date || "À définir"}</strong>
-        </div>
+                <div class="case">
+                    <span>📅 Date</span>
+                    <strong>${inscription.fields.Date || "À définir"}</strong>
+                </div>
 
-        <div class="case">
-            <span>🕒 Horaire</span>
-            <strong>${seance.fields.Horaire || "À définir"}</strong>
-        </div>
+                <div class="case">
+                    <span>🕒 Horaire</span>
+                    <strong>${inscription.fields.Horaire || "À définir"}</strong>
+                </div>
 
-        <div class="case">
-            <span>📍 Lieu</span>
-            <strong>${seance.fields.Lieu || "-"}</strong>
-        </div>
+                <div class="case">
+                    <span>📍 Lieu</span>
+                    <strong>${inscription.fields.Lieu || "-"}</strong>
+                </div>
 
-        <div class="case">
-            <span>⏱ Durée</span>
-            <strong>${seance.fields.Duree || "-"}</strong>
-        </div>
+                <div class="case">
+                    <span>⏱ Durée</span>
+                    <strong>${inscription.fields.Duree || "-"}</strong>
+                </div>
 
-    </div>
-`;
+            </div>
+
+            ${
+                inscription.fields.Observations
+                ? `
+                <div class="observation">
+                    <strong>Observation :</strong><br>
+                    ${inscription.fields.Observations}
+                </div>
+                `
+                : ""
+            }
+
+        `;
+
         zone.appendChild(div);
 
     });
