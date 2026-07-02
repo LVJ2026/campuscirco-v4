@@ -83,10 +83,16 @@ const liste = inscriptions
     .filter(inscription => inscription.fields.UAI === ecole.id)
     .sort((a, b) => {
 
-        const da = a.fields.Ordre ? a.fields.Ordre[1] : Number.MAX_SAFE_INTEGER;
-        const db = b.fields.Ordre ? b.fields.Ordre[1] : Number.MAX_SAFE_INTEGER;
+        const da = a.fields.Date_Affichage || "99/99/9999";
+        const db = b.fields.Date_Affichage || "99/99/9999";
 
-        return da - db;
+        const [ja, ma, aa] = da.split("/");
+        const [jb, mb, ab] = db.split("/");
+
+        const dateA = new Date(`${aa}-${ma}-${ja}`);
+        const dateB = new Date(`${ab}-${mb}-${jb}`);
+
+        return dateA - dateB;
 
     });
 
