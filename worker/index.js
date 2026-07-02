@@ -65,7 +65,7 @@ if (url.pathname === "/api/animations") {
 if (url.pathname === "/api/inscriptions") {
 
     const reponse = await fetch(
-        `https://grist.numerique.gouv.fr/api/docs/${env.GRIST_DOCUMENT_ID}/tables/INSCRIPTIONS/records`,
+        `https://grist.numerique.gouv.fr/api/docs/${env.GRIST_DOCUMENT_ID}/tables/INSCRIPTIONS/records?sort=Ordre`,
         {
             headers: {
                 Authorization: `Bearer ${env.GRIST_API_KEY}`
