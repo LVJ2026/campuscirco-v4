@@ -70,30 +70,6 @@ function afficherEcole() {
 
 }
 
-function formaterDate(valeur) {
-
-    if (!valeur) return "À définir";
-
-    if (typeof valeur === "string" && valeur.startsWith("d,")) {
-
-        const timestamp = Number(valeur.substring(2));
-
-        return new Date(timestamp * 1000).toLocaleDateString("fr-FR");
-
-    }
-
-    return valeur;
-
-}
-
-
-function formaterDate(valeur) {
-
-    console.log("Date =", valeur);
-
-    return "TEST";
-
-}
 
 
 function afficherSeances(ecole) {
