@@ -323,3 +323,12 @@ console.log("APP V2");
 document.addEventListener("DOMContentLoaded", chargerEcoles);
 
 document.getElementById("btnPDF").addEventListener("click", exporterPDF);
+
+const popup = document.getElementById("popup");
+const fermerPopup = document.getElementById("fermerPopup");
+
+fermerPopup.addEventListener("click", () => {
+
+    popup.classList.add("cache");
+
+});

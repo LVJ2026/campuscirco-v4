@@ -541,4 +541,97 @@ footer{
 
 }
 
+/* ==========================
+   FENÊTRE D'ACCUEIL
+========================== */
+
+.popup{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.popup-content{
+
+    background:white;
+
+    width:min(520px,90%);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+    text-align:left;
+
+}
+
+.popup-content h2{
+
+    color:var(--bleu);
+
+    margin-bottom:18px;
+
+}
+
+.popup-content p{
+
+    margin-bottom:15px;
+
+    line-height:1.6;
+
+}
+
+.popup-content ul{
+
+    margin:18px 0 24px 20px;
+
+    line-height:1.8;
+
+}
+
+.popup-content button{
+
+    width:100%;
+
+    background:var(--bleu);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.popup-content button:hover{
+
+    background:#163d72;
+
+}
+
+.popup.cache{
+
+    display:none;
+
+}
+
 
