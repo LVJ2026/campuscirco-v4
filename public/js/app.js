@@ -149,15 +149,177 @@ const liste = inscriptions.filter(inscription =>
     });
 
 }
+
+
+function exporterPDF() {
+
+    const id = Number(document.getElementById("ecole").value);
+    const ecole = ecoles.find(e => e.id === id);
+
+    if (!ecole) return;
+
+    const liste = inscriptions.filter(i => i.fields.UAI === ecole.id);
+
+    const groupes = {};
+
+    liste.forEach(i => {
+
+        const titre = i.fields.Titre_Animation || "Sans titre";
+
+        if (!groupes[titre]) groupes[titre] = [];
+
+        groupes[titre].push(i);
+
+    });
+
+    let html = `
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+<meta charset="UTF-8">
+
+<title>Campus Circo</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    margin:25px;
+    color:#222;
+    font-size:12px;
+}
+
+h1{
+    margin:0;
+    font-size:26px;
+    color:#1E4F91;
+}
+
+h2{
+    margin:2px 0 20px;
+    font-size:15px;
+    font-weight:400;
+}
+
+h3{
+    margin:28px 0 10px;
+    color:#1E4F91;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:24px;
+}
+
+th,td{
+    border:1px solid #555;
+    padding:8px;
+    vertical-align:top;
+}
+
+th{
+    background:#EAF2FB;
+}
+
+.info{
+    margin-bottom:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Campus Circo</h1>
+
+<h2>Plan de formation continue Vandoeuvre</h2>
+
+<div class="info">
+
+<strong>École :</strong> ${ecole.fields.Ecole}<br>
+<strong>Ville :</strong> ${ecole.fields.Ville}<br>
+<strong>UAI :</strong> ${ecole.fields.UAI}
+
+</div>
+`;
+
+Object.keys(groupes).forEach(titre => {
+
+    html += `
+        <h3>${titre}</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Horaire</th>
+                    <th>Lieu</th>
+                    <th>Durée</th>
+                    <th>Observation</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+    `;
+
+    groupes[titre].forEach(i => {
+
+        html += `
+            <tr>
+
+                <td>${i.fields.Date_Affichage || ""}</td>
+
+                <td>${i.fields.Horaire || ""}</td>
+
+                <td>${i.fields.Lieu || ""}</td>
+
+                <td>${i.fields.Duree || ""}</td>
+
+                <td>${i.fields.Observations || ""}</td>
+
+            </tr>
+        `;
+
+    });
+
+    html += `
+            </tbody>
+
+        </table>
+    `;
+
+});
+
+html += `
+</body>
+</html>
+`;
+
+const fenetre = window.open("", "_blank");
+
+fenetre.document.write(html);
+
+fenetre.document.close();
+
+fenetre.focus();
+
+setTimeout(() => {
+
+    fenetre.print();
+
+}, 300);
+
+}
+
+
+
 console.log("APP V2");
 document.addEventListener("DOMContentLoaded", chargerEcoles);
 
-document.addEventListener("click", (event) => {
-
-    if (event.target.id === "btnPDF") {
-
-        window.print();
-
-    }
-
-});
+document.getElementById("btnPDF").addEventListener("click", exporterPDF);
