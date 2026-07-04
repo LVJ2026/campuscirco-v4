@@ -527,5 +527,18 @@ footer{
 
 }
 
+.accueil{
+
+    background:#F8FBFF;
+    border-left:6px solid var(--bleu);
+
+}
+
+.accueil p{
+
+    margin-top:8px;
+    line-height:1.7;
+
+}
 
 
