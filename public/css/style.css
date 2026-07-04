@@ -468,6 +468,34 @@ footer{
 
     }
 
+    .header .logo{
+    	display:none;
+    }
+
+   .header{
+
+    padding:8px 14px;
+    margin-bottom:10px;
+    gap:0;
+    box-shadow:none;
+    border:1px solid #DDD;
+
+    }
+
+  .header h1{
+
+    font-size:1.8rem;
+    margin:0;
+
+    }
+
+   .subtitle{
+
+    font-size:.95rem;
+    margin-top:2px;
+
+    }
+
     select{
 
         border:none;
@@ -495,6 +523,7 @@ footer{
         box-shadow:none;
 
     }
+
 
 }
 
