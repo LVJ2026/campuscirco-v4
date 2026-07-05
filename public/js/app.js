@@ -98,7 +98,7 @@ const liste = inscriptions.filter(inscription =>
 
         div.innerHTML = `
 
-            <h3>${inscription.fields.Titre_Animation}</h3>
+            <h3>${inscription.fields.Titre_Affiche || inscription.fields.Titre_Animation}</h3>
 
             <div class="badge">
                 ${(inscription.fields.Domaine || "").charAt(0).toUpperCase() +
