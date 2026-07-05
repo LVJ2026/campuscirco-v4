@@ -292,10 +292,20 @@ th{
 
 Object.keys(groupes).forEach(titre => {
 
-    html += `
-        <h3>${titre}</h3>
+   html += `
+    <h3>
+        ${titre}
+        ${
+            i.fields.Domaine
+            ? `<span style="font-size:14px;font-weight:400;color:#666;">
+                 (${i.fields.Domaine})
+               </span>`
+            : ""
+        }
+    </h3>
 
-        <table>
+    <table>
+`;
             <thead>
 
                 <tr>
