@@ -114,13 +114,18 @@ ${
             Formateur à contacter
         </div>
 
-        👤 <strong>${inscription.fields.CPC}</strong>
+        <div class="contact-ligne">
+            <span>👤 <strong>${inscription.fields.CPC}</strong></span>
 
-        ${
-            inscription.fields.Mail
-            ? `<br>✉️ <a href="mailto:${inscription.fields.Mail}">${inscription.fields.Mail}</a>`
-            : ""
-        }
+            ${
+                inscription.fields.Mail
+                ? `<a href="mailto:${inscription.fields.Mail}">
+                    ✉️ ${inscription.fields.Mail}
+                   </a>`
+                : ""
+            }
+
+        </div>
 
     </div>
     `

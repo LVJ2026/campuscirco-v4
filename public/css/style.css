@@ -677,4 +677,28 @@ footer{
 
 }
 
+.contact-ligne{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.contact-ligne a{
+
+    color:var(--bleu);
+
+    text-decoration:none;
+
+    font-weight:500;
+
+}
+
 
