@@ -208,7 +208,7 @@ function exporterPDF() {
 
     liste.forEach(i => {
 
-        const titre = i.fields.Titre_Animation || "Sans titre";
+        const titre = i.fields.Titre_Affiche || i.fields.Titre_Animation || "Sans titre";
 
         if (!groupes[titre]) groupes[titre] = [];
 
