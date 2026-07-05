@@ -109,12 +109,19 @@ ${
     inscription.fields.CPC
     ? `
     <div class="contact">
+
+        <div class="contact-titre">
+            Formateur à contacter
+        </div>
+
         👤 <strong>${inscription.fields.CPC}</strong>
+
         ${
             inscription.fields.Mail
             ? `<br>✉️ <a href="mailto:${inscription.fields.Mail}">${inscription.fields.Mail}</a>`
             : ""
         }
+
     </div>
     `
     : ""

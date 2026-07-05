@@ -651,6 +651,17 @@ footer{
     line-height:1.6;
 
 }
+.contact-titre{
+
+    font-weight:700;
+
+    color:var(--bleu);
+
+    margin-bottom:8px;
+
+    font-size:1rem;
+
+}
 
 .contact a{
 
