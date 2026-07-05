@@ -52,6 +52,7 @@ option.textContent =
 
     new TomSelect("#ecole",{
     create:false,
+    placeholder:"Choisissez une école dans la liste ou saisissez son nom ou son RNE",
     sortField:{
         field:"text",
         direction:"asc"
