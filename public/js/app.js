@@ -105,12 +105,27 @@ const liste = inscriptions.filter(inscription =>
                 (inscription.fields.Domaine || "").slice(1)}
             </div>
 
+${
+    inscription.fields.CPC
+    ? `
+    <div class="contact">
+        👤 <strong>${inscription.fields.CPC}</strong>
+        ${
+            inscription.fields.Mail
+            ? `<br>✉️ <a href="mailto:${inscription.fields.Mail}">${inscription.fields.Mail}</a>`
+            : ""
+        }
+    </div>
+    `
+    : ""
+}
+
+
             <div class="ligne">
 
                 <div class="case">
                     <span>📅 Date</span>
-                   
-<strong>${inscription.fields.Date_Affichage || "À définir"}</strong>
+                    <strong>${inscription.fields.Date_Affichage || "À définir"}</strong>
 
                 </div>
 
