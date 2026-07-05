@@ -183,7 +183,7 @@ select:focus{
 
     border-radius:14px;
 
-    padding:14px;
+    padding:10px 12px;
 
     box-shadow:0 2px 8px rgba(0,0,0,.04);
 
@@ -195,7 +195,7 @@ select:focus{
 
     display:block;
 
-    font-size:.82rem;
+    font-size:.72rem;
 
     color:#7A8699;
 
@@ -209,7 +209,7 @@ select:focus{
 
 .infos strong{
 
-    font-size:1.25rem;
+    font-size:1rem;
 
     font-weight:600;
 
