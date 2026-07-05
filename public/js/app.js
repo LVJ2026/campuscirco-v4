@@ -24,7 +24,11 @@ seances = donneesSeances.records;
 animations = donneesAnimations.records;
 inscriptions = donneesInscriptions.records;
 
-    liste.innerHTML = "";
+   liste.innerHTML = `
+    <option value="">
+        Choisissez une école ou saisissez son nom ou son RNE
+    </option>
+`;
 
     ecoles
         .sort((a, b) =>
