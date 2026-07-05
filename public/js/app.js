@@ -36,9 +36,9 @@ inscriptions = donneesInscriptions.records;
             const option = document.createElement("option");
 
             option.value = ecole.id;
-const niveau = ecole.fields.UAI.toLowerCase().includes("maternelle")
-    ? "Maternelle"
-    : "Élémentaire";
+           const niveau = ecole.fields.UAI.toLowerCase().includes("maternelle")
+           ? "Maternelle"
+           : "Élémentaire";
 
 option.textContent =
     `${ecole.fields.Ecole} – ${niveau} (${ecole.fields.Ville})`;
@@ -106,6 +106,17 @@ const liste = inscriptions.filter(inscription =>
             </div>
 
 ${
+    inscription.fields.Observations
+    ? `
+    <div class="observation-badge">
+        ${inscription.fields.Observations}
+    </div>
+    `
+    : ""
+}
+
+
+${
     inscription.fields.CPC
     ? `
     <div class="contact">
@@ -158,16 +169,7 @@ ${
 
             </div>
 
-            ${
-                inscription.fields.Observations
-                ? `
-                <div class="observation">
-                    <strong>Observation :</strong><br>
-                    ${inscription.fields.Observations}
-                </div>
-                `
-                : ""
-            }
+
 
         `;
 

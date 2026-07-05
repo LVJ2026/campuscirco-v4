@@ -701,4 +701,24 @@ footer{
 
 }
 
+.observation-badge{
+
+    display:inline-block;
+
+    margin:0 0 18px;
+
+    padding:6px 14px;
+
+    background:#FFF4D8;
+
+    color:#8A5A00;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
 
