@@ -52,7 +52,9 @@ option.textContent =
 
     new TomSelect("#ecole",{
     create:false,
+
     placeholder:"Choisissez une école dans la liste ou saisissez son nom ou son RNE",
+
     sortField:{
         field:"text",
         direction:"asc"
@@ -290,7 +292,6 @@ Object.keys(groupes).forEach(titre => {
         <h3>${titre}</h3>
 
         <table>
-
             <thead>
 
                 <tr>
