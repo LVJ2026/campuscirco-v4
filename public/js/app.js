@@ -50,6 +50,14 @@ option.textContent =
 
     afficherEcole();
 
+    new TomSelect("#ecole",{
+    create:false,
+    sortField:{
+        field:"text",
+        direction:"asc"
+    }
+});
+
 }
 
 function afficherEcole() {
