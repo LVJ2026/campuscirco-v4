@@ -292,34 +292,34 @@ th{
 
 Object.keys(groupes).forEach(titre => {
 
-   html += `
+html += `
     <h3>
         ${titre}
         ${
-            i.fields.Domaine
+            groupes[titre][0].fields.Domaine
             ? `<span style="font-size:14px;font-weight:400;color:#666;">
-                 (${i.fields.Domaine})
+                (${groupes[titre][0].fields.Domaine})
                </span>`
             : ""
         }
     </h3>
 
     <table>
+
+        <thead>
+
+            <tr>
+                <th>Date</th>
+                <th>Horaire</th>
+                <th>Lieu</th>
+                <th>Durée</th>
+                <th>Observation</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
 `;
-            <thead>
-
-                <tr>
-                    <th>Date</th>
-                    <th>Horaire</th>
-                    <th>Lieu</th>
-                    <th>Durée</th>
-                    <th>Observation</th>
-                </tr>
-
-            </thead>
-
-            <tbody>
-    `;
 
     groupes[titre].forEach(i => {
 
