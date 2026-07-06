@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
     <meta charset="UTF-8">
@@ -18,53 +19,74 @@
 
 <body>
 
+<div class="container">
+
+    <header class="header">
+
+        <img src="images/logo-campuscirco.png"
+             alt="Campus Circo"
+             class="logo">
+
+        <div>
+
+            <h1>Campus Circo</h1>
+
             <p class="subtitle">
                 Plan de formation continue 2026-2027 Vandoeuvre
             </p>
 
         </div>
 
-           <button id="btnPDF" class="btn-pdf">
-          📄 Exporter en PDF
-           </button>
+        <button id="btnPDF" class="btn-pdf">
+            📄 Exporter en PDF
+        </button>
 
     </header>
 
-<section class="card accueil">
+    <section class="card accueil">
 
-    <h2>📢 Informations</h2>
+        <h2>📢 Informations</h2>
 
-    <p>
-        Cette application permet de consulter le plan de formation continue
-        <strong>2026-2027</strong> de votre école.
-    </p>
+        <p>
+            Cette application permet de consulter le plan de formation continue
+            <strong>2026-2027</strong> de votre école.
+        </p>
 
-    <p style="margin-top:12px;">
-        Sélectionnez votre école ci-dessous. Vous pouvez utiliser
-        le bouton <strong>📄 Exporter en PDF</strong> si vous souhaitez
-        imprimer ou enregistrer votre planning.
-    </p>
+        <p style="margin-top:12px;">
+            Sélectionnez votre école ci-dessous.
+            Vous pouvez utiliser le bouton
+            <strong>📄 Exporter en PDF</strong>
+            pour imprimer ou enregistrer votre planning.
+        </p>
 
-    <p style="margin-top:12px;">
-        ATTENTION : parfois les animations ne concernent qu'une partie de l'équipe!
-    </p>
-    <p style="margin-top:12px;">
-        Ecoles Primaires : Enseignants de maternelle ou d'élémentaire n'ont pas tous les mêmes animations.Choisissez la bonne école.
-    </p>
-    <p style="margin-top:12px;">
-        Pour les enseignants brigadiers, une école fictive "Brigade élémentaire" a été créée. 
-    </p>
-<p>
-    <strong>TEMPS PARTIEL, PEMF, FS :</strong>
-    Organisation en accord avec les formateurs.
-    <strong>Volume horaire<strong>
-    <a href="https://www1.ac-nancy-metz.fr/dsden54/pdfc/2026/Obligations%20de%20service_2026_2027.pdf"
-       target="_blank">
-       ICI
-    </a>.
-</p>
-</section>
+        <p style="margin-top:12px;">
+            <strong>ATTENTION :</strong> parfois les animations ne concernent
+            qu'une partie de l'équipe.
+        </p>
 
+        <p style="margin-top:12px;">
+            Écoles primaires : les enseignants de maternelle et d'élémentaire
+            n'ont pas toujours les mêmes animations. Choisissez la bonne école.
+        </p>
+
+        <p style="margin-top:12px;">
+            Pour les enseignants brigadiers, une école fictive
+            <strong>"Brigade élémentaire"</strong> a été créée.
+        </p>
+
+        <p style="margin-top:12px;">
+            <strong>TEMPS PARTIEL, PEMF, FS :</strong>
+            Organisation en accord avec les formateurs.
+            <strong>
+                Volume horaire
+                <a href="https://www1.ac-nancy-metz.fr/dsden54/pdfc/2026/Obligations%20de%20service_2026_2027.pdf"
+                   target="_blank">
+                    ICI
+                </a>
+            </strong>.
+        </p>
+
+    </section>
 
     <section class="card">
 
@@ -116,16 +138,10 @@
         <h2>📚 Séances</h2>
 
         <div id="seances">
-
             Chargement...
-
         </div>
 
     </section>
-
-</div>
-
- </section>
 
     <div style="text-align:center; margin:30px 0;">
 
@@ -136,6 +152,8 @@
     </div>
 
 </div>
+
+<!-- Fenêtre d'accueil -->
 
 <div id="popup" class="popup">
 
@@ -148,12 +166,16 @@
             Circonscription de Vandoeuvre
         </p>
 
-        
         <ul>
+
             <li>Sélectionnez votre école.</li>
+
             <li>Consultez les séances.</li>
-            <li>Lisez bien les observations : parfois les animations ne concernent qu'une partie de l'équipe!</li>
+
+            <li>Lisez bien les observations : certaines animations ne concernent qu'une partie de l'équipe.</li>
+
             <li>Exportez votre planning en PDF si besoin.</li>
+
         </ul>
 
         <button id="fermerPopup">
@@ -171,4 +193,5 @@
 <script src="js/app.js"></script>
 
 </body>
+
 </html>
