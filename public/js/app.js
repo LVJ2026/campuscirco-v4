@@ -283,9 +283,11 @@ th{
 
 <div class="info">
 
-<strong>École :</strong> ${ecole.fields.Ecole}<br>
-<strong>Ville :</strong> ${ecole.fields.Ville}<br>
-<strong>UAI :</strong> ${ecole.fields.UAI}
+<strong>École :</strong> ${ecole.fields.Ecole}
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<strong>RNE :</strong> ${ecole.fields.UAI}
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<strong>Ville :</strong> ${ecole.fields.Ville}
 
 </div>
 `;
